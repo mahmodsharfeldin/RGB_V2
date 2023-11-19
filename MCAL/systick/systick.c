@@ -64,10 +64,12 @@ enu_systickErrorState_t SYSTICK_reloadValue(str_systick_t* str_a_systick ,uint16
 	if(str_a_systick->clock_source == SYSTICK_SYSTEM_CLOCK)
 	{
 		STRELOAD = (uint32_t)(uint16_a_msPeriod * (SystemCoreClock / 1000))-1;
+		STCURRENT =0 ;
 	}	
 	else if(str_a_systick->clock_source == SYSTICK_INTERNAL_OSCILLATOR)
 	{
 		STRELOAD = (uint32_t)(uint16_a_msPeriod * (INTERNAL_OSCILLATOR_FREQ_DIV_4 / 1000))-1;
+		STCURRENT =0 ;
 	}	
 	else
 	{
